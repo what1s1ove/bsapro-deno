@@ -35,7 +35,7 @@
   <section class="slide" id="cover">
     <h2>Deno</h2>
     <p>A <b>secure</b> runtime for <b>JavaScript</b> and <b>TypeScript</b>.</p>
-    <img src="pictures/deno.logo.svg" width="150" height="150" alt="Deno logo">
+    <img src="pictures/deno-logo.svg" width="150" height="150" alt="Deno logo">
     <p class="copyright right">
       <a href="https://whatislove.dev/" target="_blank" rel="noreferrer">© Vladyslav Zubko</a>
     </p>
@@ -175,9 +175,81 @@
 
   <section class="slide slide--bs" id="history">
     <h2>Server JS History</h2>
-    <ul>
-
+    <ul class="history__list next">
+      <li class="history__item next">
+        <b>NodeJS</b>
+        <time class="history__item-date" datetime="2009-05-27T00:00:00+03:00">May 2009</time>
+      </li>
+      <li class="history__item next">
+        <b>io.js</b>
+        <time class="history__item-date" datetime="2014-12-01T00:00:00+03:00">December 2014</time>
+      </li>
+      <li class="history__item next">
+        <b>Reborn</b>
+        <time class="history__item-date" datetime="2015-08-08T00:00:00+03:00">September 2015</time>
+      </li>
+      <li class="history__item next">
+        <b>Deno</b>
+        <time class="history__item-date" datetime="2018-05-13T00:00:00+03:00">May 2018</time>
+      </li>
     </ul>
+
+    <style>
+      #history {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #history .history__list {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 30px;
+        padding: 20px 0 30px;
+        list-style: none;
+      }
+
+      #history .history__list::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: #000000;
+      }
+
+      #history .history__list::after {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96.154px' height='96.154px' viewBox='0 0 96.154 96.154'%3E%3Cpath d='M0.561,20.971l45.951,57.605c0.76,0.951,2.367,0.951,3.127,0l45.956-57.609c0.547-0.689,0.709-1.716,0.414-2.61 c-0.061-0.187-0.129-0.33-0.186-0.437c-0.351-0.65-1.025-1.056-1.765-1.056H2.093c-0.736,0-1.414,0.405-1.762,1.056 c-0.059,0.109-0.127,0.253-0.184,0.426C-0.15,19.251,0.011,20.28,0.561,20.971z'/%3E%3C/svg%3E%0A");
+        background-size: cover;
+      }
+
+      #history .history__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px;
+      }
+
+      #history .history__item::before {
+        display: none;
+      }
+
+      #history .history__item:nth-child(even) .history__item-date {
+        order: -1;
+      }
+
+    </style>
   </section>
 
   <section class="slide slide--bs" id="thanks">
