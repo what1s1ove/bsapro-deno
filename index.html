@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shower Presentation Engine</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
-    <style>
-        .shower {
-            --slide-ratio: calc(16 / 9);
-        }
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <style>
+    .shower {
+        --slide-ratio: calc(16 / 9);
+    }
 
-        .copyright.right.bottom {
-          left: unset;
-          right: 20px;
-        }
-    </style>
+    .slide--bs {
+      background-image: url('./pictures/binary-studio-logo.svg');
+      background-repeat: no-repeat;
+      background-position: right 20px bottom 25px;
+      background-size: 75px;
+    }
+
+    .slide--htmlacademy {
+      background-image: url('./pictures/htmlacademy-logo.svg');
+      background-repeat: no-repeat;
+      background-position: right 20px bottom 25px;
+      background-size: 30px;
+    }
+  </style>
 </head>
 <body class="shower list">
 
   <header class="caption">
-      <h1>Deno</h1>
-      <p>A secure runtime for JavaScript and TypeScript.</p>
+    <h1>Deno</h1>
+    <p>A secure runtime for JavaScript and TypeScript.</p>
   </header>
 
   <section class="slide" id="cover">
-      <h2>Deno</h2>
-      <p>A <b>secure</b> runtime for <b>JavaScript</b> and <b>TypeScript</b>.</p>
-      <img src="pictures/deno.logo.svg" width="150" height="150" alt="Deno logo">
-      <p class="copyright right">
-        <a href="https://whatislove.dev/" target="_blank" rel="noreferrer">© Vladyslav Zubko</a>
-      </p>
+    <h2>Deno</h2>
+    <p>A <b>secure</b> runtime for <b>JavaScript</b> and <b>TypeScript</b>.</p>
+    <img src="pictures/deno-logo.svg" width="150" height="150" alt="Deno logo">
+    <p class="copyright right">
+      <a href="https://whatislove.dev/" target="_blank" rel="noreferrer">© Vladyslav Zubko</a>
+    </p>
 
-      <style>
-        #cover {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+    <style>
+      #cover {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-        #cover h2 {
-          margin: 100px 0 0;
-          text-align: center;
-        }
-      </style>
+      #cover h2 {
+        margin: 100px 0 0;
+        text-align: center;
+      }
+    </style>
   </section>
 
-  <section class="slide" id="who">
+  <section class="slide slide--bs" id="who">
     <h2>Who I am</h2>
     <p class="position">
       <a href="https://binary-studio.com/" target="_blank" rel="noreferrer">BinaryStudio </a>
       ❤️ JavaScript Developer
     </p>
-    <span class="copyright bottom right">
-      <img src="pictures/binary-studio-logo.svg" width="75" alt="Binary Studio logo">
-    </span>
 
     <style>
       #who {
@@ -63,7 +69,6 @@
 
       #who h2 {
           margin: 30px 0 0;
-          text-align: center;
           font-size: 50px;
       }
 
@@ -104,7 +109,7 @@
     </style>
   </section>
 
-  <section class="slide" id="htmlacademy">
+  <section class="slide slide--htmlacademy" id="htmlacademy">
     <h2>Mentor</h2>
     <ul>
       <li>
@@ -124,9 +129,6 @@
         <a href="https://htmlacademy.ru/intensive/react" target="_blank" rel="noreferrer">React. Development of Complex Front-end Applications</a>
       </li>
     </ul>
-    <span class="copyright bottom right">
-      <img src="pictures/htmlacademy-logo.svg" width="30" alt="Binary Studio logo">
-    </span>
 
     <style>
       #htmlacademy {
@@ -135,11 +137,8 @@
     </style>
   </section>
 
-  <section class="slide" id="who-is-it">
+  <section class="slide slide--bs" id="who-is-it">
     <h2>❓</h2>
-    <span class="copyright bottom right">
-      <img src="pictures/htmlacademy-logo.svg" width="30" alt="Binary Studio logo">
-    </span>
 
     <style>
       #who-is-it {
@@ -154,19 +153,20 @@
     </style>
   </section>
 
-  <section class="slide" id="ryan-dahl">
+  <section class="slide slide--bs" id="ryan-dahl">
     <h2>Who is it</h2>
     <img class="next" src="pictures/ryan-dahl.jpeg" width="500" alt="Ryan Dahl">
     <a class="ryan-dah__link next" href="https://en.wikipedia.org/wiki/Ryan_Dahl" target="_blank" rel="noreferrer">Ryan Dahl — NodeJS creator</a>
-    <span class="copyright bottom right">
-      <img src="pictures/htmlacademy-logo.svg" width="30" alt="Binary Studio logo">
-    </span>
 
     <style>
       #ryan-dahl {
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+
+      #ryan-dahl h2 {
+        align-self: flex-start;
       }
 
       #ryan-dahl .ryan-dah__link {
@@ -176,11 +176,259 @@
     </style>
   </section>
 
-  <section class="slide" id="thanks">
+  <section class="slide slide--bs" id="history">
+    <h2>Server JS History</h2>
+    <ul class="history__list next">
+      <li class="history__item next">
+        <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank" rel="noreferrer">
+          <b>NodeJS</b>
+        </a>
+        <time class="history__item-date" datetime="2009-05-27T00:00:00+03:00">May 2009</time>
+      </li>
+      <li class="history__item next">
+        <a href="https://en.wikipedia.org/wiki/Node.js#History" target="_blank" rel="noreferrer">
+          <b>io.js</b>
+        </a>
+        <time class="history__item-date" datetime="2014-12-01T00:00:00+03:00">December 2014</time>
+      </li>
+      <li class="history__item next">
+        <a href="https://en.wikipedia.org/wiki/Node.js#History" target="_blank" rel="noreferrer">
+          <b>Reborn</b>
+        </a>
+        <time class="history__item-date" datetime="2015-08-08T00:00:00+03:00">September 2015</time>
+      </li>
+      <li class="history__item next">
+        <a href="https://en.wikipedia.org/wiki/Deno_(software)" target="_blank" rel="noreferrer">
+          <b>Deno</b>
+        </a>
+        <time class="history__item-date" datetime="2018-05-13T00:00:00+03:00">May 2018</time>
+      </li>
+    </ul>
+
+    <style>
+      #history {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #history .history__list {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 30px;
+        padding: 20px 0 30px;
+        list-style: none;
+      }
+
+      #history .history__list::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: #000000;
+      }
+
+      #history .history__list::after {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96.154px' height='96.154px' viewBox='0 0 96.154 96.154'%3E%3Cpath d='M0.561,20.971l45.951,57.605c0.76,0.951,2.367,0.951,3.127,0l45.956-57.609c0.547-0.689,0.709-1.716,0.414-2.61 c-0.061-0.187-0.129-0.33-0.186-0.437c-0.351-0.65-1.025-1.056-1.765-1.056H2.093c-0.736,0-1.414,0.405-1.762,1.056 c-0.059,0.109-0.127,0.253-0.184,0.426C-0.15,19.251,0.011,20.28,0.561,20.971z'/%3E%3C/svg%3E%0A");
+        background-size: cover;
+      }
+
+      #history .history__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px;
+      }
+
+      #history .history__item::before {
+        display: none;
+      }
+
+      #history .history__item:nth-child(even) .history__item-date {
+        order: -1;
+      }
+
+    </style>
+  </section>
+
+  <section class="slide slide--bs" id="ten-things-why">
+    <h2>10 Things I Regret About Node.js</h2>
+    <img class="next" src="pictures/ryan-dahl.jpeg" width="500" alt="Ryan Dahl">
+    <a class="ten-things-why__link next" href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" rel="noreferrer">Ryan Dahl — JSConf EU</a>
+
+    <style>
+      #ten-things-why {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #ten-things-why h2 {
+        align-self: flex-start;
+      }
+
+      #ten-things-why .ten-things-why__link {
+          align-self: center;
+          margin: auto 0 30px;
+        }
+    </style>
+  </section>
+
+  <section class="slide slide--bs" id="first-reason">
+    <h2>Promises 🙏</h2>
+    <ul>
+      <li class="next">
+        <i>Added in June 2009 then removed in February 2010</i>
+      </li>
+      <li class="next">
+        <i>Promises are the necessary abstraction for <code>async/await</code></i>
+      </li>
+      <li class="next">
+        <i>Node would have sped the delivery of the eventual standardization (<code>async/await</code> and etc.)</i>
+      </li>
+      <li class="next">
+        <i>Today Node's many async APIs are aging baldly due to this</i>
+      </li>
+    </ul>
+    <style>
+      #first-reason code {
+        font-style: normal;
+      }
+    </style>
+  </section>
+
+  <section class="slide slide--bs" id="second-reason">
+    <h2>Security 🔒</h2>
+    <ul>
+      <li class="next">
+        <i>Had I put more thought into how that could be maintained for certain applications, Node could have had some nice security</i>
+      </li>
+      <li class="next">
+        <i>Example: Your linter shouldn't get complete access to your computer and network</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="third-reason">
+    <h2>The Build System (GYP) 🧱</h2>
+    <ul>
+      <li class="next">
+        <i>V8 (via Chrome) started using GYP and I switched Node over in tow. Later Chrome dropped GYP for GN</i>
+      </li>
+      <li class="next">
+        <i>It's an awful experience for users. It's this non-JSON, Python adaptation of JSON</i>
+      </li>
+      <li class="next">
+        <i>The continued usage of GYP is the probably largest failure of Node core</i>
+      </li>
+      <li class="next">
+        <i>Instead of guiding users to write C++ bindings to V8, I should have provided a core foreign function interface (FFI)</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="fourth-reason">
+    <h2>package.json 📦</h2>
+    <ul>
+      <li class="next">
+        <i>Allowing Nod's <code>require()</code> to inspect package.json files for <code>main</code></i>
+      </li>
+      <li class="next">
+        <i>Ultimately I included NPM in the Node distribution</i>
+      </li>
+      <li class="next">
+        <i>This is nor a strictly necessary abstraction - and one that doesn't exist on the web</i>
+      </li>
+      <li class="next">
+        <i><code>package.json</code> now includes all sorts of unnecessary information. License? Repository? Description? It's boilerplate noise</i>
+      </li>
+    </ul>
+    <style>
+      #fourth-reason code {
+        font-style: normal;
+      }
+    </style>
+  </section>
+
+  <section class="slide slide--bs" id="fifth-reason">
+    <h2>node_modules 🗑</h2>
+    <ul>
+      <li class="next">
+        <i>It massively complicates the module resolution algorithm</i>
+      </li>
+      <li class="next">
+        <i>Deviates greatly from browser semantics</i>
+      </li>
+      <li class="next">
+        <i>Unfortunately it's impossible to undo now</i>
+      </li>
+      <li class="next">
+        <u><i>It's my fault and I'm very sorry</i></u>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="sixth-reason">
+    <h2>require("module") without ".js" extension 🪝</h2>
+    <ul>
+      <li class="next">
+        <i>Why?</i> 😅
+      </li>
+      <li class="next">
+        <i>Not how browser JS works</i>
+      </li>
+      <li class="next">
+        <i>The module loader has to query the file system at multiple locations trying to guess what the user intended</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="seventh-reason">
+    <h2>index.js 🔑</h2>
+    <ul>
+      <li class="next">
+        <i>I thought it was cute, because there was index.html</i>
+      </li>
+      <li class="next">
+        <i>It needlessly complicated the module loading system</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="practice">
+    <h2>Let's practice 🦕</h2>
+    <a class="practice__lint next" href="https://deno.land/" target="_blank" rel="noreferrer">
+      <img src="pictures/deno-logo.svg" width="150" height="150" alt="Deno logo">
+    </a>
+
+    <style>
+      #practice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #practice .practice__lint {
+        background-image: none;
+      }
+    </style>
+  </section>
+
+  <section class="slide slide--bs" id="thanks">
     <h2>Thanks 🥝</h2>
-    <span class="copyright bottom right">
-      <img src="pictures/binary-studio-logo.svg" width="75" alt="Binary Studio logo">
-    </span>
 
     <style>
       #thanks {
@@ -191,7 +439,7 @@
   </section>
 
   <footer class="badge">
-      <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    <a href="https://github.com/shower/shower">Fork me on GitHub</a>
   </footer>
 
   <div class="progress"></div>
