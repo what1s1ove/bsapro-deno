@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
   <style>
     .shower {
-        --slide-ratio: calc(16 / 9);
+      --slide-ratio: calc(16 / 9);
     }
 
     .slide--bs {
@@ -35,7 +35,9 @@
   <section class="slide" id="cover">
     <h2>Deno</h2>
     <p>A <b>secure</b> runtime for <b>JavaScript</b> and <b>TypeScript</b>.</p>
-    <img src="pictures/deno-logo.svg" width="150" height="150" alt="Deno logo">
+    <a class="cover__lint" href="https://deno.land/" target="_blank" rel="noreferrer">
+      <img src="pictures/deno-logo.svg" width="150" height="150" alt="Deno logo">
+    </a>
     <p class="copyright right">
       <a href="https://whatislove.dev/" target="_blank" rel="noreferrer">© Vladyslav Zubko</a>
     </p>
@@ -50,6 +52,10 @@
       #cover h2 {
         margin: 100px 0 0;
         text-align: center;
+      }
+
+      #cover .cover__lint {
+        background-image: none;
       }
     </style>
   </section>
