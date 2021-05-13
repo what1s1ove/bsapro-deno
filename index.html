@@ -69,7 +69,6 @@
 
       #who h2 {
           margin: 30px 0 0;
-          text-align: center;
           font-size: 50px;
       }
 
@@ -164,6 +163,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+
+      #ryan-dahl h2 {
+        align-self: flex-start;
       }
 
       #ryan-dahl .ryan-dah__link {
@@ -272,10 +275,172 @@
         align-items: center;
       }
 
+      #ten-things-why h2 {
+        align-self: flex-start;
+      }
+
       #ten-things-why .ten-things-why__link {
           align-self: center;
           margin: auto 0 30px;
         }
+    </style>
+  </section>
+
+  <section class="slide slide--bs" id="first-reason">
+    <h2>Promises 🙏</h2>
+    <ul>
+      <li class="next">
+        <i>Added in June 2009 then removed in February 2010</i>
+      </li>
+      <li class="next">
+        <i>Promises are the necessary abstraction for async/await</i>
+      </li>
+      <li class="next">
+        <i>Node would have sped the delivery of the eventual standardization (async/await and etc.)</i>
+      </li>
+      <li class="next">
+        <i>Today Node's many async APIs are aging baldly due to this</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="second-reason">
+    <h2>Security 🔒</h2>
+    <ul>
+      <li class="next">
+        <i>V8 by itself is a very good security sandbox</i>
+      </li>
+      <li class="next">
+        <i>Had I put more thought into how that could be maintained for certain applications, Node could have had some nice security guarantees not available in any other language</i>
+      </li>
+      <li class="next">
+        <i>Example: Your linter shouldn't get complete access to your computer and network</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="third-reason">
+    <h2>The Build System (GYP) 🧱</h2>
+    <ul>
+      <li class="next">
+        <i>V8 (via Chrome) started using GYP and I switched Node over in tow. Later Chrome dropped GYP for GN. Leaving Node the sole GYP user</i>
+      </li>
+      <li class="next">
+        <i>GYP is not an ugly internal interface either - it is exposed to anyone who's trying to bind to V8</i>
+      </li>
+      <li class="next">
+        <i>It's an awful experience for users. It's this non-JSON, Python adaptation of JSON</i>
+      </li>
+      <li class="next">
+        <i>The continued usage of GYP is the probably largest failure of Node core</i>
+      </li>
+      <li class="next">
+        <i>Instead of guiding users to write C++ bindings to V8, I should have provided a core foreign function interface (FFI)</i>
+      </li>
+      <li class="next">
+        <i>Many people, early on, suggested moving to an FFI (namely Cantrill) and regrettably I ignored them</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="fourth-reason">
+    <h2>package.json 📦</h2>
+    <ul>
+      <li class="next">
+        <i>Isaac, in NPM, invented package.json (for the most part)</i>
+      </li>
+      <li class="next">
+        <i>But I sanctioned it by allowing Nod's require() to inspect package.json files for "main"</i>
+      </li>
+      <li class="next">
+        <i>Ultimately I included NPM in the Node distribution, which much made it the defacto standard</i>
+      </li>
+      <li class="next">
+        <i>It's unfortunate that there is centralized (privately controlled even) repository for modules</i>
+      </li>
+      <li class="next">
+        <i>Allowing package.json gave rise to the concept of a "module" as a directory of files</i>
+      </li>
+      <li class="next">
+        <i>This is no a strictly necessary abstraction - and one that doesn't exist on the web</i>
+      </li>
+      <li class="next">
+        <i>package.json now includes all sorts of unnecessary information. License? Repository? Description? It's boilerplate noise</i>
+      </li>
+      <li class="next">
+        <i>If only relative files and URLs were used when importing, the path defines the version. There is no need to list dependencies</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="fifth-reason">
+    <h2>node_modules 🗑</h2>
+    <ul>
+      <li class="next">
+        <i>It massively complicates the module resolution algorithm</i>
+      </li>
+      <li class="next">
+        <i>vendored-by-default has good intentions, but in practice just using $NODE_PATH wouldn't have precluded that</i>
+      </li>
+      <li class="next">
+        <i>Deviates greatly from browser semantics</i>
+      </li>
+      <li class="next">
+        <i>It's my fault and I'm very sorry</i>
+      </li>
+      <li class="next">
+        <i>Unfortunately it's impossible to undo now</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="sixth-reason">
+    <h2>require("module") without ".js" extension 🪝</h2>
+    <ul>
+      <li class="next">
+        <i>Needlessly less explicit</i>
+      </li>
+      <li class="next">
+        <i>Not how browser javascript works</i>
+      </li>
+      <li class="next">
+        <i>The module loader has to query the file system at multiple locations trying to guess what the user intended</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="seventh-reason">
+    <h2>index.js 🔑</h2>
+    <ul>
+      <li class="next">
+        <i>I thought it was cute, because there was index.html</i>
+      </li>
+      <li class="next">
+        <i>It needlessly complicated the module loading system</i>
+      </li>
+      <li class="next">
+        <i>It became especially unnecessary after require supported package.json</i>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide slide--bs" id="practice">
+    <h2>Let's practice 🦕</h2>
+    <a class="practice__lint next" href="https://deno.land/" target="_blank" rel="noreferrer">
+      <img src="pictures/deno-logo.svg" width="150" height="150" alt="Deno logo">
+    </a>
+
+    <style>
+      #practice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #practice .practice__lint {
+        background-image: none;
+      }
     </style>
   </section>
 
