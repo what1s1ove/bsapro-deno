@@ -293,25 +293,27 @@
         <i>Added in June 2009 then removed in February 2010</i>
       </li>
       <li class="next">
-        <i>Promises are the necessary abstraction for async/await</i>
+        <i>Promises are the necessary abstraction for <code>async/await</code></i>
       </li>
       <li class="next">
-        <i>Node would have sped the delivery of the eventual standardization (async/await and etc.)</i>
+        <i>Node would have sped the delivery of the eventual standardization (<code>async/await</code> and etc.)</i>
       </li>
       <li class="next">
         <i>Today Node's many async APIs are aging baldly due to this</i>
       </li>
     </ul>
+    <style>
+      #first-reason code {
+        font-style: normal;
+      }
+    </style>
   </section>
 
   <section class="slide slide--bs" id="second-reason">
     <h2>Security 🔒</h2>
     <ul>
       <li class="next">
-        <i>V8 by itself is a very good security sandbox</i>
-      </li>
-      <li class="next">
-        <i>Had I put more thought into how that could be maintained for certain applications, Node could have had some nice security guarantees not available in any other language</i>
+        <i>Had I put more thought into how that could be maintained for certain applications, Node could have had some nice security</i>
       </li>
       <li class="next">
         <i>Example: Your linter shouldn't get complete access to your computer and network</i>
@@ -323,10 +325,7 @@
     <h2>The Build System (GYP) 🧱</h2>
     <ul>
       <li class="next">
-        <i>V8 (via Chrome) started using GYP and I switched Node over in tow. Later Chrome dropped GYP for GN. Leaving Node the sole GYP user</i>
-      </li>
-      <li class="next">
-        <i>GYP is not an ugly internal interface either - it is exposed to anyone who's trying to bind to V8</i>
+        <i>V8 (via Chrome) started using GYP and I switched Node over in tow. Later Chrome dropped GYP for GN</i>
       </li>
       <li class="next">
         <i>It's an awful experience for users. It's this non-JSON, Python adaptation of JSON</i>
@@ -337,9 +336,6 @@
       <li class="next">
         <i>Instead of guiding users to write C++ bindings to V8, I should have provided a core foreign function interface (FFI)</i>
       </li>
-      <li class="next">
-        <i>Many people, early on, suggested moving to an FFI (namely Cantrill) and regrettably I ignored them</i>
-      </li>
     </ul>
   </section>
 
@@ -347,30 +343,23 @@
     <h2>package.json 📦</h2>
     <ul>
       <li class="next">
-        <i>Isaac, in NPM, invented package.json (for the most part)</i>
+        <i>Allowing Nod's <code>require()</code> to inspect package.json files for <code>main</code></i>
       </li>
       <li class="next">
-        <i>But I sanctioned it by allowing Nod's require() to inspect package.json files for "main"</i>
+        <i>Ultimately I included NPM in the Node distribution</i>
       </li>
       <li class="next">
-        <i>Ultimately I included NPM in the Node distribution, which much made it the defacto standard</i>
+        <i>This is nor a strictly necessary abstraction - and one that doesn't exist on the web</i>
       </li>
       <li class="next">
-        <i>It's unfortunate that there is centralized (privately controlled even) repository for modules</i>
-      </li>
-      <li class="next">
-        <i>Allowing package.json gave rise to the concept of a "module" as a directory of files</i>
-      </li>
-      <li class="next">
-        <i>This is no a strictly necessary abstraction - and one that doesn't exist on the web</i>
-      </li>
-      <li class="next">
-        <i>package.json now includes all sorts of unnecessary information. License? Repository? Description? It's boilerplate noise</i>
-      </li>
-      <li class="next">
-        <i>If only relative files and URLs were used when importing, the path defines the version. There is no need to list dependencies</i>
+        <i><code>package.json</code> now includes all sorts of unnecessary information. License? Repository? Description? It's boilerplate noise</i>
       </li>
     </ul>
+    <style>
+      #fourth-reason code {
+        font-style: normal;
+      }
+    </style>
   </section>
 
   <section class="slide slide--bs" id="fifth-reason">
@@ -380,16 +369,13 @@
         <i>It massively complicates the module resolution algorithm</i>
       </li>
       <li class="next">
-        <i>vendored-by-default has good intentions, but in practice just using $NODE_PATH wouldn't have precluded that</i>
-      </li>
-      <li class="next">
         <i>Deviates greatly from browser semantics</i>
       </li>
       <li class="next">
-        <i>It's my fault and I'm very sorry</i>
+        <i>Unfortunately it's impossible to undo now</i>
       </li>
       <li class="next">
-        <i>Unfortunately it's impossible to undo now</i>
+        <u><i>It's my fault and I'm very sorry</i></u>
       </li>
     </ul>
   </section>
@@ -398,10 +384,10 @@
     <h2>require("module") without ".js" extension 🪝</h2>
     <ul>
       <li class="next">
-        <i>Needlessly less explicit</i>
+        <i>Why?</i> 😅
       </li>
       <li class="next">
-        <i>Not how browser javascript works</i>
+        <i>Not how browser JS works</i>
       </li>
       <li class="next">
         <i>The module loader has to query the file system at multiple locations trying to guess what the user intended</i>
@@ -417,9 +403,6 @@
       </li>
       <li class="next">
         <i>It needlessly complicated the module loading system</i>
-      </li>
-      <li class="next">
-        <i>It became especially unnecessary after require supported package.json</i>
       </li>
     </ul>
   </section>
